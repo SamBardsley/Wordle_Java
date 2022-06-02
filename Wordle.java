@@ -8,22 +8,23 @@ class Wordle {
   public static void main(String[] args) {
 
     for(int i = 0; i < 6; i++) {
-      System.out.println(Arrays.toString(checker())); 
+      int[] score = correctness(); 
+      System.out.println(Arrays.toString(score));
+      if (verifier(score)) break;
     }
+    System.out.println("you're done.");
   }
 
   // for loop runs through string 'b' and compares it to indexes of string 'a'
-  public static int[] checker() {
+  public static int[] correctness() {
     System.out.println("Word guess? ");
     
     String a = input.next();  
     int[] wordle = new int[a.length()];
     
     for(int i = 0; i < a.length(); i++) { 
-      
       if(a.charAt(i) == answer.charAt(i)) {
         wordle[i] = 2;
-      
       } else {
         for(int j = 0; j < answer.length(); j++) {
           if(a.charAt(i) == answer.charAt(j)) {
@@ -35,8 +36,12 @@ class Wordle {
     return wordle;  
   }
 
-
-
-
-
+  public static boolean verifier(int[] wordle) {
+    for (int i=0; i<5; i++) {
+      if (wordle[i]==0||wordle[i]==1) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
