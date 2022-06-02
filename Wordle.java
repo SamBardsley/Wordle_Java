@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 class Wordle {
   public static final Scanner input = new Scanner(System.in);
-  public static final String answer = "decide";
+  public static final String answer = "crane";
   
   public static void main(String[] args) {
 
-    for(int i = 0; i < 6; i++) {
+    for(int i = 0; i < 5; i++) {
       int[] score = correctness(); 
       System.out.println(Arrays.toString(score));
       if (verifier(score)) break;
     }
-    System.out.println("you're done.");
+    System.out.println("You're done.");
   }
 
   // for loop runs through string 'b' and compares it to indexes of string 'a'
@@ -37,7 +37,7 @@ class Wordle {
   }
 
   public static boolean verifier(int[] wordle) {
-    for (int i=0; i<5; i++) {
+    for (int i=0; i<4; i++) {
       if (wordle[i]==0||wordle[i]==1) {
         return false;
       }
