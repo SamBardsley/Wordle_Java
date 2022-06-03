@@ -15,18 +15,14 @@ class Wordle {
       tries++;
       if (verifier(score)) break;
     }
-    if(tries == 1) {
-      System.out.println(message[0] + " You guessed the Wordle in 1 try.");
-    } else {
-      System.out.println(message[tries] + " You guessed the Wordle in " + tries + " tries.");
-    }
+    endMessage(tries);
   }
 
   // for loop runs through string 'b' and compares it to indexes of string 'a'
   public static int[] correctness() {
     System.out.println("Word guess? ");
-    
-    String a = input.next();  
+
+    String a = wordChecker();
     int[] wordle = new int[a.length()];
     
     for(int i = 0; i < a.length(); i++) { 
@@ -43,6 +39,21 @@ class Wordle {
     return wordle;  
   }
 
+  public static String wordChecker() {
+    boolean correctLength=false;
+    String guess = "";
+    while (!correctLength) {
+      String currentGuess = input.next();
+      if (guess.length()==answer.length()) {
+        correctLength=true;
+      } else {
+        System.out.println("Your word must be " + answer.length() + " letters long");
+      }
+      guess=currentGuess;
+    }
+    return guess;
+  }
+
   public static boolean verifier(int[] wordle) {
     for (int i=0; i<4; i++) {
       if (wordle[i]==0||wordle[i]==1) {
@@ -50,5 +61,13 @@ class Wordle {
       }
     }
     return true;
+  }
+
+  public static void endMessage(int tries) {
+    if(tries == 1) {
+      System.out.println(message[0] + " You guessed the Wordle in 1 try.");
+    } else {
+      System.out.println(message[tries] + " You guessed the Wordle in " + tries + " tries.");
+    }
   }
 }
