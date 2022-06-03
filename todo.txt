@@ -1,0 +1,3 @@
+0 = UNFINISHED    1 = PARTIALLY FINISHED    2 = FINISHED
+
+- Add endgame messages that correspond to amount of tries (i.e. "genius, magnificent, phew, etc")  -  2
