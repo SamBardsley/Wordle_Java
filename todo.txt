@@ -1,3 +1,5 @@
 0 = UNFINISHED    1 = PARTIALLY FINISHED    2 = FINISHED
 
 - Add endgame messages that correspond to amount of tries (i.e. "genius, magnificent, phew, etc")  -  2
+-make list object - 1
+-make list efficiently check each word: https://stackoverflow.com/questions/3307549/fastest-way-to-check-if-a-liststring-contains-a-unique-string - 0
