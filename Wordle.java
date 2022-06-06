@@ -4,17 +4,16 @@ import java.util.Scanner;
 class Wordle {
   public static final Scanner input = new Scanner(System.in);
   public static final String[] message = {"Genius.", "Magnificent.", "Impressive.", "Splendid.", "Great.", "Phew."};
-  public static final String answer = "crane";
+  public static final int answerLength = 5;
   
   public static void main(String[] args) {
     List words     = new List();
-    String theword = words.getword();
-    System.out.println(theword);
-
 
     int tries = 0;
     for(int i = 0; i < 5; i++) {
-      int[] score = correctness(); 
+      String Answer = words.getword();
+      System.out.println(Answer);
+      int[] score = correctness(Answer); 
       System.out.println(Arrays.toString(score));
       tries++;
       if (verifier(score)) break;
@@ -23,7 +22,7 @@ class Wordle {
   }
 
   // for loop runs through string 'b' and compares it to indexes of string 'a'
-  public static int[] correctness() {
+  public static int[] correctness(String answer) {
     System.out.println("Word guess? ");
 
     String a = wordChecker();
@@ -48,10 +47,10 @@ class Wordle {
     String guess = "";
     while (!correctLength) {
       String currentGuess = input.next();
-      if (guess.length()==answer.length()) {
+      if (currentGuess.length()==answerLength) {
         correctLength=true;
       } else {
-        System.out.println("Your word must be " + answer.length() + " letters long");
+        System.out.println("Your word must be " + answerLength + " letters long");
       }
       guess=currentGuess;
     }
