@@ -8,11 +8,11 @@ class Wordle {
   
   public static void main(String[] args) {
     List words     = new List();
+    String Answer = words.getword();
+    System.out.println(Answer);
 
     int tries = 0;
     for(int i = 0; i < 5; i++) {
-      String Answer = words.getword();
-      System.out.println(Answer);
       int[] score = correctness(Answer); 
       System.out.println(Arrays.toString(score));
       tries++;
@@ -49,10 +49,10 @@ class Wordle {
       String currentGuess = input.next();
       if (currentGuess.length()==answerLength) {
         correctLength=true;
+        guess=currentGuess;
       } else {
         System.out.println("Your word must be " + answerLength + " letters long");
       }
-      guess=currentGuess;
     }
     return guess;
   }
