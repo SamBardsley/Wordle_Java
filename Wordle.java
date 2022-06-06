@@ -23,7 +23,7 @@ class Wordle {
 
   // for loop runs through string 'b' and compares it to indexes of string 'a'
   public static int[] correctness(String answer) {
-    System.out.println("Word guess? ");
+    System.out.print("Guess a word ");
 
     String a = wordChecker();
     int[] wordle = new int[a.length()];
