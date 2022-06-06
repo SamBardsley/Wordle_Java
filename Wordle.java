@@ -7,7 +7,10 @@ class Wordle {
   public static final String answer = "crane";
   
   public static void main(String[] args) {
-    List words = new List();
+    List words     = new List();
+    String theword = words.getword();
+    System.out.println(theword);
+
 
     int tries = 0;
     for(int i = 0; i < 5; i++) {
