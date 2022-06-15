@@ -1,12 +1,14 @@
-import java.util.Arrays;
+ import java.util.Arrays;
 import java.util.Scanner;
+
+import java.io.*;
 
 class Wordle {
   public static final Scanner input = new Scanner(System.in);
   public static final String[] message = {"Genius.", "Magnificent.", "Impressive.", "Splendid.", "Great.", "Phew."};
   public static final int answerLength = 5;
   
-  public static void main(String[] args) {
+  public static void main(String[] args) throws FileNotFoundException {
     List words     = new List();
     String Answer = words.getword();
     System.out.println(Answer);
