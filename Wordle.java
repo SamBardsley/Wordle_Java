@@ -60,14 +60,13 @@ class Wordle {
   }
 
   public static boolean verifier(int[] wordle) {
-    boolean boo = true;
-    for (int i=0; i<4; i++) {
+    for (int i=0; i<5; i++) {
       System.out.println(wordle[i]);
       if (wordle[i]<=1) {
-        boo = false;
+        return false;
       }
     }
-    return boo;
+    return true;
   }
 
   public static void endMessage(int tries) {
